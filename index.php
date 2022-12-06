@@ -33,6 +33,11 @@ error_reporting(0);
              echo "<tr id='row".$i."'><td><a href='".$file."' target='_blank'><img src='".$file."' width=200 height=200></a></td><td><a href='javascript:void(0);' id='delete' rmid='row".$i."' filename='".$file."'>Delete</a></td></tr>";
              $i++;    
 }
+$i=0;
+    foreach(glob($dir."{*.mp4}", GLOB_BRACE) as $file){ 
+             echo "<tr id='row".$i."'><td><video href='".$file."' target='_blank'><source src='".$file."' width=200 height=200></video></td><td><a href='javascript:void(0);' id='delete' rmid='row".$i."' filename='".$file."'>Delete</a></td></tr>";
+             $i++;    
+}
 
 ?>
    </table>
