@@ -18,7 +18,7 @@ if(($_POST['del'] == 1) && (isset($_POST['del']))) {
   echo $data;
   exit;
 } else {
-    $allowFile = array('image/png','image/jpeg','image/gif','image/jpg');
+    $allowFile = array('image/png','image/jpeg','image/gif','video/mp4');
     if(in_array($_FILES["file"]["type"],$allowFile)) {
       if ($_FILES["file"]["error"] > 0) {
         $data =  json_encode(array('type'=>'error', 'msg'=>"Return Code: " . $_FILES["file"]["error"])); 
